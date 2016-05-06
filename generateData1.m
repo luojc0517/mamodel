@@ -1,0 +1,32 @@
+%生成n个样本
+beta0=[1,-0.5,0,0.5,0,0,0,0,0,0]';
+lamda0=[0,0.5,0.4,0,0,0,0]';
+gamma0=[-0.3,0.3,0,0,0,0,0]';
+n=100;
+X=cell(1,n);
+Y=cell(1,n);
+mu=cell(1,n);
+D=cell(1,n);
+L=cell(1,n);
+Z=cell(1,n);
+sigma=cell(1,n);
+var=cell(1,n);
+m=cell(1,n);
+delta=cell(1,n);
+t=cell(1,n);
+H=cell(1,n);
+for i=1:n
+    [Xi,Zi,Li,Yi,mui,deltai,sigmai,vari,mi,ti,Hi]=generateData();
+    X{i}=Xi;
+    Y{i}=Yi;
+    Z{i}=Zi;
+    L{i}=Li;
+    mu{i}=mui;
+    delta{i}=deltai;
+    sigma{i}=sigmai;
+    var{i}=vari;
+    D{i}=diag(vari);
+    m{i}=mi;
+    t{i}=ti;
+    H{i}=Hi;
+end
